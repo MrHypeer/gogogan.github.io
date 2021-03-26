@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Differential Aberration Imaging, DAI | GOGOGAN</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="差分相差成像（Differential Aberration Imaging, DAI）是一种应用与双光子显微镜中的成像技术。作为提升深度成像的技术手段，该技术与自适应光学（Adaptive Optics）的最大差别在于，其通过主动的引入相差并通过后期处理得到清晰的成像结果。通过顺序或同时采集两张强度图像并做差，实现双光子成像过程中焦面外（out-of-focus）的杂散荧光的抑制，从而提升成像的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Differential Aberration Imaging, DAI">
+<meta property="og:url" content="http://example.com/2021/03/26/%E7%9F%A5%E8%AF%86/DAI/index.html">
+<meta property="og:site_name" content="GOGOGAN">
+<meta property="og:description" content="差分相差成像（Differential Aberration Imaging, DAI）是一种应用与双光子显微镜中的成像技术。作为提升深度成像的技术手段，该技术与自适应光学（Adaptive Optics）的最大差别在于，其通过主动的引入相差并通过后期处理得到清晰的成像结果。通过顺序或同时采集两张强度图像并做差，实现双光子成像过程中焦面外（out-of-focus）的杂散荧光的抑制，从而提升成像的">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/images/DAI/denk.png">
+<meta property="og:image" content="http://example.com/images/DAI/eq1.png">
+<meta property="og:image" content="http://example.com/images/DAI/eq2.png">
+<meta property="og:image" content="http://example.com/images/DAI/06optical.png">
+<meta property="og:image" content="http://example.com/images/DAI/06results.png">
+<meta property="og:image" content="http://example.com/images/DAI/19optical.png">
+<meta property="og:image" content="http://example.com/images/DAI/19optical.png">
+<meta property="article:published_time" content="2021-03-26T13:13:07.534Z">
+<meta property="article:modified_time" content="2021-03-26T13:26:39.133Z">
+<meta property="article:author" content="Adam LIU">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/DAI/denk.png">
+  
+    <link rel="alternate" href="/atom.xml" title="GOGOGAN" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">GOGOGAN</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-知识/DAI" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/03/26/%E7%9F%A5%E8%AF%86/DAI/" class="article-date">
+  <time class="dt-published" datetime="2021-03-26T13:13:07.534Z" itemprop="datePublished">2021-03-26</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%9F%A5%E8%AF%86/">知识</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Differential Aberration Imaging, DAI
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>差分相差成像（Differential Aberration Imaging, DAI）是一种应用与双光子显微镜中的成像技术。作为提升深度成像的技术手段，该技术与自适应光学（Adaptive Optics）的最大差别在于，其通过主动的引入相差并通过后期处理得到清晰的成像结果。通过顺序或同时采集两张强度图像并做差，实现双光子成像过程中焦面外（out-of-focus）的杂散荧光的抑制，从而提升成像的对比度。</p>
+<span id="more"></span>
+
+<p><img src="/images/DAI/denk.png"></p>
+<p><em>图 1 被观测组织表面的杂散荧光信号</em></p>
+<p>Patrick and thank在2006年发表的一篇文章中指出，双光子荧光显微镜的成像深度不仅与激光功率等激光参数有关，同时表面物质的焦外荧光信号也会产生较大影响，如图 1所示。在成像深度较浅时，焦点激发出的荧光强度大于物质表面的杂散荧光，此时焦外荧光信号对成像质量影响较小；而在成像深度较深时，焦点处激发荧光强度较弱与表面处的杂散荧光相比不能保持强度优势，因此在成像质量有一定的劣化 [1]。</p>
+<p>针对此问题，Patrick and Denk et. Al于同年提出了差分像差成像技术（differential aberration imaging, DAI）[2]。该方案基于双光子的激发特性，即有像差的系统不能良好聚焦，而未引入像的双光子成像系统在焦点处的焦点效果较好。另外一个非常重要的事实是，在引入相差和不引入像差的两种条件下，焦面外荧光信号的激发尤其是组织表面的杂散信号不会受到影响。因此基于此原理先后采集有像差和无像差的强度图片，然后进行图片的减法操作便可以得到焦外荧光信号抑制后的清晰图片。</p>
+<p><img src="/images/DAI/eq1.png"><br><img src="/images/DAI/eq2.png"></p>
+<p><img src="/images/DAI/06optical.png"><br><em>图 2 DAI的实现光路</em></p>
+<p>基于弹道轨迹（ballistic light）的假设，OTF可以表达为公式1，其中Φ表示系统对光引入的额外的相。进一步的基于Parseval定理，可以得到在不同成像深度的激光强度表达式，公式2。对应的光路如图 2所示，其中变形镜（deformable mirror, DM）用于产生像差。该文章中作者使用了两种相位生成方法，一种是在DM件上用4块区域，而一种用两块区域。图 3中虚线位置表示的是在引入相差后焦点处的强度分布，可以看出，在引入相差之后，焦面处荧光强度降低明显，而焦面外信号强度几乎保持不变，因此通过做差得到了明显的对比度提升，最大提升倍率可达到八倍。</p>
+<p><img src="/images/DAI/06results.png"><br><em>图 3 DAI系统的荧光信号于深度关系</em></p>
+<p>从系统的光路布局以及实现原理来看，需要对单点进行两次连续的成像，并且顺序采集才能得到对比度提升的图片，因此成像速度受到了较大的削弱。进一步地，在2019年他们提出了新的光路布局和采集方法，有效地改善了系统的采集速度[3]。从图 4中可以看出，在该系统中已经避免了低频的DM器件，而是通过PBS将光线分束，并使用SSP将一路光线整形为donut beam，而另一路产生6.25 ns的延时，为无相差的高斯光束。其中他们创新的引入了1.8米的光纤在激光的频率中额外的扩展了频率，由80 MHz到160 MHz。基于此创新原理在信号采集时采用了新型的探测方式，在NI采集系统中通道2引入6.25纳秒的时间延时使得在同一个激光脉冲频率下，PMT采集到的信号分别对应有像差和无像差的强度结果。通过此方法便得到了与激光同频率的，点探测方式下的有像差和无相差图像的同时采集，避免了顺序采集带来时间成本的增加。其得到的结果如图 5所示，观测对象为离体染色的鼠脑样本，成像深度为150 μm，成像速度为30 Hz（scanner limited）。</p>
+<p><img src="/images/DAI/19optical.png"><br><em>图 4 DAI的新型光路以及采集方案</em></p>
+<p><img src="/images/DAI/19optical.png"><br><em>图 5 鼠脑成像效果对比@150 μm</em></p>
+<p>总结来看，该方法通过两张图片做差有效抑制了组织表面的荧光信号，提升了深度成像的对比度，同时采用了新型的点探测思路将顺序采集的时间成本大大降低，进一步提升了该方法的适用性。但是该方法也存在一些不足，首先基于弹道轨迹的假设该方法适用于低物镜的成像系统，决定了其成像深度较常用的双光子显微系统浅。同时该优化思路与自适应光学不同，该方法不是通过动态调整进入样本的波前从而实时地反馈和矫正，而是通过开环的方式直接实现两张图像的采集，所以不具备提升成像深度的能力。同时该方法的采集模块只适用于点扫系统，在面成像的系统中局限性大。</p>
+<p><strong>参考文献</strong></p>
+<ol>
+<li>   T. Patrick, and D. Winfried, “On the fundamental imaging-depth limit in two-photon<br>microscopy,” Journal of the Optical Society of America A 23, 3139–3149 (2006).</li>
+<li>   Aymeric Leray, and Jerome Mertz, “Rejection of two-photon fluorescence background in thick tissue by differential aberration imaging,” Opt. Express, OE 14, 10565–10573 (2006).</li>
+<li>   S. Xiao, and J. Mertz, “Contrast improvement in two-photon microscopy with instantaneous differential aberration imaging,” Biomedical optics express 10, 2467–2477 (2019).</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/03/26/%E7%9F%A5%E8%AF%86/DAI/" data-id="ckmqca3cw00007wupbzqr2smk" data-title="Differential Aberration Imaging, DAI" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2021/03/20/%E7%9F%A5%E8%AF%86/CUP/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Compressed Ultrafast Photography, CUP</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%9F%A5%E8%AF%86/">知识</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%BB%E4%B9%A6/">读书</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%BB%E4%B9%A6/%E5%BF%83%E7%90%86%E5%AD%A6/">心理学</a></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">March 2021</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/03/26/%E7%9F%A5%E8%AF%86/DAI/">Differential Aberration Imaging, DAI</a>
+          </li>
+        
+          <li>
+            <a href="/2021/03/20/%E7%9F%A5%E8%AF%86/CUP/">Compressed Ultrafast Photography, CUP</a>
+          </li>
+        
+          <li>
+            <a href="/2021/03/18/%E8%AF%BB%E4%B9%A6/%E5%BF%83%E7%90%86%E5%AD%A6/%E4%B9%8C%E5%90%88%E4%B9%8B%E4%BC%97/">《乌合之众》</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2021 Adam LIU<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
